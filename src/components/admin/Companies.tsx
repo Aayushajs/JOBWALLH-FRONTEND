@@ -167,7 +167,7 @@ const Companie = () => {
     setPreviewUrl('')
   }
 
-  // ✅ Fetch companies from API
+  //  Fetch companies from API
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
@@ -435,21 +435,21 @@ const Companie = () => {
       <div className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8">
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6 sm:mb-8">
+            <div className="mb-4 lg:mb-0">
+              <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-1 sm:mb-2">
                 Company Management
               </h1>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
                 Monitor and manage your company network efficiently
               </p>
             </div>
 
-            <div className="flex items-center gap-3 mt-4 lg:mt-0">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
               <Popover open={isFilterOpen} onOpenChange={setIsFilterOpen}>
                 <PopoverTrigger asChild>
-                  <Button variant="outline" className="flex items-center gap-2">
-                    <Filter className="w-4 h-4" /> Filter
+                  <Button variant="outline" className="flex items-center gap-2 text-sm">
+                    <Filter className="w-4 h-4" /> <span className="hidden sm:inline">Filter</span>
                     {(startDate || endDate) && (
                       <span className="ml-1 px-2 py-0.5 bg-blue-100 text-blue-600 text-xs rounded-full">
                         Active
@@ -530,14 +530,14 @@ const Companie = () => {
           </div>
 
           {/* 🔹 Dynamic Metric Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-10">
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-6"
+                className="relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl sm:rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-4 sm:p-6"
               >
                 <div className="flex justify-between items-start mb-2">
                   <div>
@@ -606,7 +606,7 @@ const Companie = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="bg-white dark:bg-gray-800 rounded-2xl shadow-md border border-gray-200 dark:border-gray-700 p-6 mb-10"
+            className="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-md border border-gray-200 dark:border-gray-700 p-4 sm:p-6 mb-6 sm:mb-10"
           >
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-semibold text-gray-900 dark:text-white">

@@ -315,37 +315,37 @@ const Profile = () => {
                 >
                     {/* Modern Header Banner */}
                     <motion.div
-                        className="bg-white dark:bg-gray-800 rounded-3xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden mb-8 mt-12"
+                        className="bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden mb-6 sm:mb-8 mt-12"
                         variants={itemVariants}
                     >
                         {/* Cover with Gradient */}
-                        <div className="h-40 bg-gradient-to-r from-yellow-600 via-yellow-650 to-yellow-500 relative">
+                        <div className="h-32 sm:h-40 bg-gradient-to-r from-yellow-600 via-yellow-650 to-yellow-500 relative">
                             <div className="absolute inset-0 bg-[url('https://timelinecovers.pro/facebook-cover/download/black-cat-face-facebook-cover.jpg')] opacity-20"></div>
                         </div>
                         
                         {/* Profile Header Content */}
-                        <div className="px-8 pb-8">
-                            <div className="flex flex-col md:flex-row md:items-end md:justify-between -mt-16">
-                                <div className="flex flex-col md:flex-row md:items-end gap-6 mb-4 md:mb-0">
+                        <div className="px-4 sm:px-6 lg:px-8 pb-6 sm:pb-8">
+                            <div className="flex flex-col md:flex-row md:items-end md:justify-between -mt-12 sm:-mt-16">
+                                <div className="flex flex-col sm:flex-row md:items-end gap-4 sm:gap-6 mb-4 md:mb-0">
                                     {/* Avatar */}
                                     <motion.div
                                         whileHover={{ scale: 1.05 }}
                                         className="relative"
                                     >
-                                        <Avatar className="h-32 w-32 border-4 border-white dark:border-gray-800 shadow-xl ring-4 ring-blue-100 dark:ring-blue-900/30">
+                                        <Avatar className="h-24 w-24 sm:h-32 sm:w-32 border-4 border-white dark:border-gray-800 shadow-xl ring-4 ring-blue-100 dark:ring-blue-900/30">
                                             <AvatarImage
                                                 src={user?.profile?.profilePhoto || "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"}
                                                 alt="profile"
                                                 className="object-cover"
                                             />
                                         </Avatar>
-                                        <div className="absolute bottom-2 right-2 w-5 h-5 bg-green-500 border-3 border-white dark:border-gray-800 rounded-full"></div>
+                                        <div className="absolute bottom-2 right-2 w-4 h-4 sm:w-5 sm:h-5 bg-green-500 border-3 border-white dark:border-gray-800 rounded-full"></div>
                                     </motion.div>
                                     
                                     {/* User Info */}
                                     <div className="mb-3">
-                                        <div className="flex items-center gap-3 mb-2">
-                                            <h1 className="text-3xl font-bold text-gray-900 dark:text-white">{user?.fullname}</h1>
+                                        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2">
+                                            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">{user?.fullname}</h1>
                                             {user?.premiumPlans?.some(p => new Date(p.expiryDate) > new Date()) && (
                                                 <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-0 px-3 py-1">
                                                     <Sparkles className="w-3 h-3 mr-1" />
@@ -371,31 +371,32 @@ const Profile = () => {
                                 </div>
                                 
                                 {/* Actions */}
-                                <div className="flex gap-3">
+                                <div className="flex flex-wrap gap-2 sm:gap-3">
                                     <Button 
                                         onClick={() => setOpen(true)}
-                                        className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-md"
+                                        className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-md text-sm"
                                     >
                                         <Pen className="w-4 h-4 mr-2" />
-                                        Edit Profile
+                                        <span className="hidden sm:inline">Edit Profile</span>
+                                        <span className="sm:hidden">Edit</span>
                                     </Button>
                                     <Button 
                                         onClick={logoutHandler}
                                         variant="outline"
-                                        className="border-gray-300 dark:border-gray-600"
+                                        className="border-gray-300 dark:border-gray-600 text-sm"
                                     >
-                                        <LogOut className="w-4 h-4 mr-2" />
-                                        Logout
+                                        <LogOut className="w-4 h-4 sm:mr-2" />
+                                        <span className="hidden sm:inline">Logout</span>
                                     </Button>
                                 </div>
                             </div>
                         </div>
                     </motion.div>
                      
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
                         {/* Left Sidebar */}
                         <motion.div
-                            className="lg:col-span-1 space-y-6"
+                            className="lg:col-span-1 space-y-4 sm:space-y-6"
                             variants={itemVariants}
                         >
                             {/* Profile Strength Card */}
@@ -485,11 +486,11 @@ const Profile = () => {
                         >
                             {/* Stats Overview */}
                             <motion.div
-                                className="grid grid-cols-3 gap-4"
+                                className="grid grid-cols-3 gap-2 sm:gap-4"
                                 variants={itemVariants}
                             >
-                                <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-6 text-center">
-                                    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                <div className="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-3 sm:p-6 text-center">
+                                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg sm:rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3">
                                         <Briefcase className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                                     </div>
                                     <div className="text-2xl font-bold text-gray-900 dark:text-white mb-1">12</div>

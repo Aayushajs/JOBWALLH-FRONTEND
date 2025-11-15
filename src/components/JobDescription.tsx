@@ -171,17 +171,17 @@ const JobDescription = () => {
             </Button>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {/* Main Content */}
             <div className="lg:col-span-2">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-orange-200/50 dark:border-orange-700/50 overflow-hidden"
+                className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-orange-200/50 dark:border-orange-700/50 overflow-hidden"
               >
                 {/* Job Header */}
-                <div className="relative bg-gradient-to-br from-orange-500 via-yellow-500 to-orange-600 p-8 text-white overflow-hidden">
+                <div className="relative bg-gradient-to-br from-orange-500 via-yellow-500 to-orange-600 p-4 sm:p-6 lg:p-8 text-white overflow-hidden">
                   {/* Decorative Elements */}
                   <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32" />
                   <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full -ml-24 -mb-24" />
@@ -189,28 +189,28 @@ const JobDescription = () => {
                   <div className="relative z-10">
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                       <div className="flex-1">
-                        <div className="flex items-center gap-4 mb-6">
-                          <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm shadow-xl">
-                            <Building className="w-10 h-10" />
+                        <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                          <div className="w-14 h-14 sm:w-20 sm:h-20 bg-white/20 rounded-xl sm:rounded-2xl flex items-center justify-center backdrop-blur-sm shadow-xl">
+                            <Building className="w-7 h-7 sm:w-10 sm:h-10" />
                           </div>
                           <div>
-                            <h1 className="text-4xl font-bold mb-2">{singleJob?.title}</h1>
-                            <p className="text-orange-100 text-lg font-medium">{singleJob?.company?.name}</p>
+                            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-1 sm:mb-2">{singleJob?.title}</h1>
+                            <p className="text-orange-100 text-base sm:text-lg font-medium">{singleJob?.company?.name}</p>
                           </div>
                         </div>
                         
                         {/* Badges */}
-                        <div className="flex flex-wrap gap-3">
-                          <Badge className="bg-white/20 backdrop-blur-sm text-white border-0 px-5 py-2 rounded-full shadow-lg font-semibold">
-                            <Users className="w-4 h-4 mr-2" />
+                        <div className="flex flex-wrap gap-2 sm:gap-3">
+                          <Badge className="bg-white/20 backdrop-blur-sm text-white border-0 px-3 sm:px-5 py-1.5 sm:py-2 rounded-full shadow-lg font-semibold text-xs sm:text-sm">
+                            <Users className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                             {singleJob?.position} Positions
                           </Badge>
-                          <Badge className="bg-white/20 backdrop-blur-sm text-white border-0 px-5 py-2 rounded-full shadow-lg font-semibold">
-                            <Briefcase className="w-4 h-4 mr-2" />
+                          <Badge className="bg-white/20 backdrop-blur-sm text-white border-0 px-3 sm:px-5 py-1.5 sm:py-2 rounded-full shadow-lg font-semibold text-xs sm:text-sm">
+                            <Briefcase className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                             {singleJob?.jobType}
                           </Badge>
-                          <Badge className="bg-white/20 backdrop-blur-sm text-white border-0 px-5 py-2 rounded-full shadow-lg font-semibold">
-                            <DollarSign className="w-4 h-4 mr-2" />
+                          <Badge className="bg-white/20 backdrop-blur-sm text-white border-0 px-3 sm:px-5 py-1.5 sm:py-2 rounded-full shadow-lg font-semibold text-xs sm:text-sm">
+                            <DollarSign className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                             {singleJob?.salary} LPA
                           </Badge>
                         </div>
@@ -252,10 +252,10 @@ const JobDescription = () => {
                 </div>
 
                 {/* Job Details */}
-                <div className="p-8">
+                <div className="p-4 sm:p-6 lg:p-8">
                   {/* Quick Stats - Enhanced */}
-                  <div className="bg-gradient-to-br from-orange-50 via-yellow-50 to-orange-50 dark:from-orange-900/10 dark:via-yellow-900/10 dark:to-orange-900/10 rounded-2xl p-6 mb-8 border border-orange-200/50 dark:border-orange-700/30">
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  <div className="bg-gradient-to-br from-orange-50 via-yellow-50 to-orange-50 dark:from-orange-900/10 dark:via-yellow-900/10 dark:to-orange-900/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8 border border-orange-200/50 dark:border-orange-700/30">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
                       {jobDetails.map((detail, index) => (
                         <motion.div
                           key={detail.label}
@@ -407,11 +407,11 @@ const JobDescription = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="space-y-6 sticky top-24"
+                className="space-y-4 sm:space-y-6 lg:sticky lg:top-24"
               >
                 {/* Apply Card */}
-                <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-orange-200/50 dark:border-orange-700/50 overflow-hidden">
-                  <div className="p-6">
+                <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-orange-200/50 dark:border-orange-700/50 overflow-hidden">
+                  <div className="p-4 sm:p-6">
                     <AnimatePresence mode="wait">
                       {isApplied ? (
                         <motion.div
